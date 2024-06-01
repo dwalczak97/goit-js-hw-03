@@ -1,8 +1,6 @@
 function makeArray(firstArray, secondArray, maxLength) {
-  let justArray = firstArray.push(secondArray);
-  for (let index = 0; maxLength < justArray.length; index++) {
-    return justArray[index];
-  }
+  const justArray = firstArray.push(secondArray);
+  return justArray;
 }
 
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
