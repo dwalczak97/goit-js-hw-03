@@ -1,8 +1,11 @@
 function makeArray(firstArray, secondArray, maxLength) {
-  const justArray = firstArray.push(secondArray);
-  return justArray;
+  let justArray = firstArray.concat(secondArray);
+  for (let index = 0; index < justArray.length; index++) {
+    if (index < maxLength) {
+      return justArray.slice(0, maxLength);
+    }
+  }
 }
-
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
 // ["Mango", "Poly", "Ajax"]
 console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
@@ -15,17 +18,3 @@ console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4));
 // ["Earth", "Jupiter", "Neptune", "Uranus"]
 console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
 // []
-
-// for (let index = 0; index < students.length; index++) {
-//     console.log( students[index] );
-// }
-// function getQueueAfter(name) {
-//     const index = queue.indexOf(name);
-
-//     if (index === -1) return queue;
-
-//     return queue.slice(index);
-// }
-
-// console.log(getQueueAfter("Dorthy"));
-// console.log(getQueueAfter("Zeke"));
